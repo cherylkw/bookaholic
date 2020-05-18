@@ -37,13 +37,21 @@ book_api() : an api which allow other apps to retrieve our book reviews info fro
 
 ## HTML :
 book.html : Display individual book info
+
 error.html : call when having server error
+
 index.html : homepage
+
 layout.html : layout for all html
+
 lists.html : Display book list after searched
+
 register.html : Member register page
+
 search.html : search book page 
-create.py : create all tables 
+
+create.py : create all tables
+
 import.py : import data from bookscsv to database
 
 ## Youtube Demo :
