@@ -1,4 +1,4 @@
-# Project 1
+# Bookaholic
 
 Web Programming with Python and JavaScript
 
@@ -59,8 +59,22 @@ https://www.youtube.com/watch?v=A2wfYVgHJGU
 
 4. Run flask run to start up your Flask application.
 
+## Setting up PostgreSQL Database
+
+This project is using PostgreSQL database hosted by Heroku, so make sure you have registered an account in Heroku and connect the DB.
+
+1. On Heroku’s Dashboard, click “New” and choose “Create new app.”
+2. Give your app a name, and click “Create app.”
+3. On your app’s “Overview” page, click the “Configure Add-ons” button.
+4. In the “Add-ons” section of the page, type in and select “Heroku Postgres.”
+5. Choose the “Hobby Dev - Free” plan, which will give you access to a free PostgreSQL database that will support up to 10,000 rows of data. Click “Provision.”
+6. Click the “Heroku Postgres :: Database” link.
+7. You should now be on your database’s overview page. Click on “Settings”, and then “View Credentials.” This is the information you’ll need to log into your database. You can access the database via Adminer, filling in the server (the “Host” in the credentials list), your username (the “User”), your password, and the name of the database, all of which you can find on the Heroku credentials page.
+
 ## Visiting an URL and interact with the application
 
 - Open the localhost http://127.0.0.1:5000/ to run the app
 
 Author : Cheryl Kwong Email : cherylkwong@gmail.com
+
+Developed by Python, Flask, HTML,PostgreSQL,Heroku
