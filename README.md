@@ -21,11 +21,17 @@ It's a project about search for books information and reviews. User can perform 
 
 ## Functions functionality in application.py:
 index() : Homepage
+
 login() : Get the username and password to login to system, session("user_id") and session("username") is being stored in this function
+
 register() : Add member onto system
+
 logout() : Logout system by clearing session variables
+
 search() : retrieve book list by entered criteria
+
 book() : retrieve individual book info and reviews from system, also using Goodreads API to retrieve their book reviews info
+
 book_api() : an api which allow other apps to retrieve our book reviews info from our system (JSON)
 
 
