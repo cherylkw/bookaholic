@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome to Bookaholic!
+{% endblock %}
+
+{% block body %}
+    <h2>Search Result</h2>
+
+    <ul class="list-group list-group-flush">
+        
+        {% for book in books %}
+            <li class="list-group-item">
+                <a href="{{ url_for('book', book_id=book.id) }}">
+                    ISBN / Title / Author : {{ book.isbn }} / {{ book.title }} / {{book.author}}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="nav-item">
+            <a href="{{ url_for('logout')}}" class="nav-link" >Logout</a>
+    </div>
+{% endblock %}

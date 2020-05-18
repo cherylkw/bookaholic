@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome to Bookaholic!
+{% endblock %}
+
+{% block body %}
+    <h2>Search a Book</h2>
+    <br>
+    <h4>Hi, {{ session["username"] }} ! Enter one of the below info :</h4>
+    <br>
+    <form action="{{ url_for('search') }}" method="post">
+
+        <div class="col-7">
+                <label for="exampleInputEmail1">ISBN</label><br>
+                <input class="form-control" name="isbn" type="text" placeholder="ISBN">
+        </div>
+        <br>
+        <div class="col-7">
+                <label for="exampleInputPassword1">Title</label>
+                <input class="form-control" name="title" type="text" placeholder="Title">
+        </div>
+        <BR>
+        <div class="col-7">
+                <label for="exampleInputPassword1">Author</label>
+                <input class="form-control" name="author" type="text" placeholder="Author">
+        </div>
+        <br>
+        <div class="col-7">
+            <button class="btn btn-primary">Search Now</button>
+        </div>
+
+    </form>
+    <div class="alert alert-light">{{ message }}</div>
+    <div class="nav-item">
+            <a href="{{ url_for('logout')}}" class="nav-link" >Logout</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome to Bookaholic!
+{% endblock %}
+
+{% block body %}
+    <h2>Book Details</h2>
+
+    <ul class="list-group">
+        <li class="list-group-item">ISBN  : {{book.isbn}}</li>
+        <li class="list-group-item">Title : {{ book.title }}</li>
+        <li class="list-group-item">Author : {{ book.author}}</li>
+        <li class="list-group-item">Goodreads Review : Total Score {{ goodbook['books'][0]['work_ratings_count'] }} / Average Score {{ goodbook['books'][0]['average_rating'] }}</li>
+    </ul>
+    <br>
+    <h2>Our Readers Reviews</h2>
+        {% for review in reviews %}
+            <div class="card" style="width: 69rem;">
+                <div class="card-body">
+                 <h5 class="card-title">Rating : {{ review.rating }}</h5>
+                 <h6 class="card-subtitle mb-2 text-muted">Reader : {{ review.username }}</h6>
+                 <p class="card-text">{{ review.comment }}</p>
+                </div>
+            </div>
+        {% else %}
+          <div class="card-title">No comments</div>
+        {% endfor %}
+    <br>
+    <h2>Write a review</h2>
+
+    <div class="alert alert-light">{{ message }}</div>
+    <h5>Rating : </h>
+    <form action="{{ url_for('book',book_id=book.id)}}" method="post" id="usrform">
+
+        <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="rating" id="usrform" value="1" checked>
+              <label class="form-check-label" for="usrform">1</label>
+        </div>
+        <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="rating" id="usrform" value="2">
+                <label class="form-check-label" for="usrform">2</label>
+          </div>
+          <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="rating" id="usrform" value="3">
+                <label class="form-check-label" for="usrform">3</label>
+          </div>
+          <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="rating" id="usrform" value="4">
+                <label class="form-check-label" for="usrform">4</label>
+          </div>
+          <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="rating" id="usrform" value="5">
+                <label class="form-check-label" for="usrform">5</label>
+          </div>          
+        <BR><BR>
+        <textarea name="comment" form="usrform"  rows="10" cols="80">Enter comment here...</textarea>
+        <br>
+        <div class="form-group">
+            <button class="btn btn-primary">Submit</button>
+        </div>
+        <br>
+        <div class="nav-item">
+                <a href="javascript:history.back()" class="nav-link" >Go Back</a> 
+                <a href="{{ url_for('logout')}}" class="nav-link" >Logout</a>
+        </div>
+    </form>
+ 
+{% endblock %}
